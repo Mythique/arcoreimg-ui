@@ -16,7 +16,7 @@ namespace arcoreimg_app.Helpers
         {
             ProcessStartInfo procstartInfo = new ProcessStartInfo();
             Process process = new Process();
-            procstartInfo.FileName = "Cmd.exe";
+            procstartInfo.FileName = "./arcoreimg.exe";
             procstartInfo.Arguments = args;
             // Do not show the black cmd.
             procstartInfo.CreateNoWindow = true;
@@ -24,6 +24,7 @@ namespace arcoreimg_app.Helpers
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardInput = true;
             process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             return process;
         }
@@ -47,31 +48,37 @@ namespace arcoreimg_app.Helpers
             scan.Image = imagePath;
 
             double filelen = new FileInfo(imagePath).Length;
-            string f_size = " (" + AppCore.GetFileSize(filelen) + ")";
-            Process process = CreateProcess("/C \"arcoreimg.exe eval-img --input_image_path=" + imagePath);
+            Process process = CreateProcess($"eval-img --input_image_path=\"{imagePath}\"");
             process.Start();
 
-            try
+            string error = process.StandardError.ReadToEnd();
+            string output = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+
+            scan.Title = $"{Path.GetFileName(imagePath)} ({GetFileSize(filelen)}) | ";
+
+            if (!string.IsNullOrEmpty(error))
             {
-                string result = process.StandardOutput.ReadToEnd();
-                process.WaitForExit();
-                int score = int.Parse(result);
+                scan.Score = 0;
+                scan.Title += error;
+            }
+            else if (int.TryParse(output, out int score))
+            {
                 scan.Score = score;
 
-
                 if (score < 49)
-                    scan.Title = Path.GetFileName(imagePath) + f_size + " | Poor Quality Image";
-
-                else if (score > 50 && score < 89)
-                    scan.Title = Path.GetFileName(imagePath) + f_size + " | Good Quality Image";
-
+                    scan.Title += "Poor Quality Image";
                 else if (score > 90)
-                    scan.Title = Path.GetFileName(imagePath) + f_size + " | Best Quality Image";
+                    scan.Title += "Best Quality Image";
+                else
+                    scan.Title += "Good Quality Image";
             }
-            catch (Exception)
+            else
             {
-                //arcoreimg.WriteLogs("App Errors", @" " + ex.Message, @"" + ex.InnerException, @"" + ex.StackTrace);
+                scan.Score = 0;
+                scan.Title += string.IsNullOrEmpty(output) ? "No result available" : output;
             }
+            
             return scan;
         }
         public static string Todate()
