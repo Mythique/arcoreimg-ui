@@ -155,8 +155,7 @@ namespace arcoreimg_app
 
                 NewDatabaseName = "myimages_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".imgdb";
 
-                Process process = AppCore.CreateProcess("build-db --input_image_list_path=" + FileListPath +
-                    " --output_db_path=" + NewDatabaseNamePath + "/" + NewDatabaseName);
+                Process process = AppCore.CreateProcess($"build-db --input_image_list_path=\"{FileListPath}\" --output_db_path=\"{Path.Combine(NewDatabaseNamePath, NewDatabaseName)}\"");
                 process.Start();
 
                 try
