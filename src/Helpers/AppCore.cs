@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 
 namespace arcoreimg_app.Helpers
@@ -80,94 +79,6 @@ namespace arcoreimg_app.Helpers
             }
 
             return scan;
-        }
-
-        public static string Todate()
-        {
-            return DateTime.Now.ToString("yyyy-MM-dd");
-        }
-
-        public static string JustNow()
-        {
-            return DateTime.Now.ToString("HH:mm:ss tt");
-        }
-
-        public static string TimeStamp()
-        {
-            return DateTime.Now.ToString("yyyyMMddHHmmssffff");
-        }
-
-        public static void WriteLogs(string source, string message, string innerexception, string stacktrace)
-        {
-            string FileLog = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppCore.Todate() + "-logs.log");
-            using (StreamWriter sw = new StreamWriter(FileLog, true))
-            {
-                sw.WriteLine("maarcilog>");
-                sw.WriteLine("    <time>" + JustNow() + "</time>");
-                sw.WriteLine("    <source>" + source + "</source>");
-                sw.WriteLine("    <message>" + message + "</message>");
-                if (innerexception.Length > 0) sw.WriteLine("    <innerexception>" + innerexception + "</innerexception>");
-                if (stacktrace.Length > 0) sw.WriteLine("    <stacktrace>" + stacktrace + "</stacktrace>");
-                sw.WriteLine("</maarcilog>");
-                sw.WriteLine("");
-                sw.Dispose();
-            }
-        }
-
-        /// <summary>
-        /// this is the path to the root directory of maarci's content directory \appdata\local\MaarciApp
-        /// </summary>
-
-        public static string Local
-        {
-            get
-            {
-                string rootDir = Directory.GetParent(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).ToString()).ToString();
-                return Path.Combine(rootDir, "Apps", "Malezi", "MA-ARCoreImg");
-            }
-        }
-
-        /// <summary>
-        /// this is the path to the logs directory \appdata\local\MaarciApp\logs
-        /// </summary>
-        public static string Logs
-        {
-            get
-            {
-                return Path.Combine(Local, "logs");
-            }
-        }
-
-        /// <summary>
-        /// this is the path to the daily log file in logs directory
-        /// \appdata\local\MaarciApp\logs\Todate() + "-logs.log"
-        /// </summary>
-        public static string FileLog
-        {
-            get
-            {
-                return Path.Combine(Logs, AppCore.Todate() + "-logs.log");
-            }
-        }
-
-        /// <summary>
-        /// this is the path to the daily log file in logs directory
-        /// \appdata\local\MaarciApp\logs\Processlogs.log"
-        /// </summary>
-        public static string JustNowLog
-        {
-            get
-            {
-                return Path.Combine(Logs, "JustNow.log");
-            }
-        }
-
-        public static string MaarciData
-        {
-            get
-            {
-                return Path.Combine(Local, "myimages.imgdb");
-            }
         }
     }
 }
