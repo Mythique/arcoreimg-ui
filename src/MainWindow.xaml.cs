@@ -15,7 +15,7 @@ namespace arcoreimg_app
     /// </summary>
     public partial class MainWindow : Window
     {
-        string FileListPath, NewDatabaseNamePath, NewDatabaseName;
+        private string FileListPath, NewDatabaseNamePath, NewDatabaseName;
 
         public MainWindow()
         {
@@ -23,7 +23,7 @@ namespace arcoreimg_app
             Loaded += MainWindow_Loaded;
         }
 
-        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             TxtDirPath1.Text = TxtDirPath3.Text = NewDatabaseNamePath = Path.Combine(Environment.GetEnvironmentVariable("USERPROFILE"), "Documents");
             TxtDirPath2.Text = TxtDirPath4.Text = Path.Combine(Environment.GetEnvironmentVariable("USERPROFILE"), "Downloads");
@@ -94,7 +94,6 @@ namespace arcoreimg_app
             LoadingBar.Visibility = Visibility.Collapsed;
         }
 
-
         private void BtnDbDirBrowser_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dlgDb = new CommonOpenFileDialog()
@@ -137,7 +136,6 @@ namespace arcoreimg_app
                     //arcoreimg.WriteLogs("App Errors", @" " + ex.Message, @"" + ex.InnerException, @"" + ex.StackTrace);
                 }
             }
-
         }
 
         private void BtnTxtBrowser_Click(object sender, RoutedEventArgs e)
@@ -170,6 +168,5 @@ namespace arcoreimg_app
                 }
             }
         }
-
     }
 }

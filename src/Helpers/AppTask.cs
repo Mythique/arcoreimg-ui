@@ -1,19 +1,16 @@
-﻿using arcoreimg_app.Controls;
-using arcoreimg_app.Helpers;
-using System;
+﻿using arcoreimg_app.Helpers;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Windows.Documents;
 
 namespace arcoreimg_app
 {
     public class AppTask
     {
-        string _dirpath;
-        BackgroundWorker _worker;
-        List<AsScanned> _scans = new List<AsScanned>();
+        private string _dirpath;
+        private BackgroundWorker _worker;
+        private List<AsScanned> _scans = new List<AsScanned>();
 
         public AppTask(string dirpath)
         {
@@ -45,7 +42,6 @@ namespace arcoreimg_app
         {
             add { _worker.RunWorkerCompleted += value; }
             remove { _worker.RunWorkerCompleted -= value; }
-
         }
 
         public void StartAsync()

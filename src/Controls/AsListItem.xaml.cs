@@ -47,16 +47,15 @@ namespace arcoreimg_app.Controls
         public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click",
             RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(TabItem));
 
-        void RaiseClickEvent()
+        private void RaiseClickEvent()
         {
             RoutedEventArgs newEventArgs = new RoutedEventArgs(AsListItem.ClickEvent);
             RaiseEvent(newEventArgs);
         }
 
-        void OnClick()
+        private void OnClick()
         {
             RaiseClickEvent();
         }
-
     }
 }

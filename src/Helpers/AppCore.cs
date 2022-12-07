@@ -78,9 +78,10 @@ namespace arcoreimg_app.Helpers
                 scan.Score = 0;
                 scan.Title += string.IsNullOrEmpty(output) ? "No result available" : output;
             }
-            
+
             return scan;
         }
+
         public static string Todate()
         {
             return DateTime.Now.ToString("yyyy-MM-dd");
@@ -90,6 +91,7 @@ namespace arcoreimg_app.Helpers
         {
             return DateTime.Now.ToString("HH:mm:ss tt");
         }
+
         public static string TimeStamp()
         {
             return DateTime.Now.ToString("yyyyMMddHHmmssffff");
@@ -111,6 +113,7 @@ namespace arcoreimg_app.Helpers
                 sw.Dispose();
             }
         }
+
         /// <summary>
         /// this is the path to the root directory of maarci's content directory \appdata\local\MaarciApp
         /// </summary>
@@ -136,7 +139,7 @@ namespace arcoreimg_app.Helpers
         }
 
         /// <summary>
-        /// this is the path to the daily log file in logs directory 
+        /// this is the path to the daily log file in logs directory
         /// \appdata\local\MaarciApp\logs\Todate() + "-logs.log"
         /// </summary>
         public static string FileLog
@@ -148,7 +151,7 @@ namespace arcoreimg_app.Helpers
         }
 
         /// <summary>
-        /// this is the path to the daily log file in logs directory 
+        /// this is the path to the daily log file in logs directory
         /// \appdata\local\MaarciApp\logs\Processlogs.log"
         /// </summary>
         public static string JustNowLog
@@ -166,7 +169,5 @@ namespace arcoreimg_app.Helpers
                 return Path.Combine(Local, "myimages.imgdb");
             }
         }
-
     }
-
 }
