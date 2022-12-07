@@ -33,17 +33,17 @@ namespace arcoreimg_app
         {
             var dlg = new Microsoft.Win32.OpenFileDialog
             {
-                Title = "Select an Image",
+                Title = "Select an ImagePath",
                 Filter = "Images |*.jpg; *.png",
                 CheckFileExists = true
             };
             if (dlg.ShowDialog() == true)
             {
-                AsScanned scan = AppCore.CheckImage(dlg.FileName);
+                EvaluationInformation scan = AppCore.CheckImage(dlg.FileName);
                 AsListItem asListItem = new AsListItem
                 {
-                    Title = scan.Title,
-                    Image = scan.Image,
+                    Title = scan.Information,
+                    Image = scan.ImagePath,
                     Score = scan.Score
                 };
                 ImageList.Children.Add(asListItem);
@@ -54,7 +54,7 @@ namespace arcoreimg_app
         {
             CommonOpenFileDialog dlgLst = new CommonOpenFileDialog()
             {
-                Title = "Select an Image Directory",
+                Title = "Select an ImagePath Directory",
                 RestoreDirectory = true,
                 IsFolderPicker = true
             };
@@ -78,15 +78,15 @@ namespace arcoreimg_app
         {
             BackgroundWorker worker = sender as BackgroundWorker;
             worker.Dispose();
-            List<AsScanned> scanned = (List<AsScanned>)e.Result;
+            List<EvaluationInformation> scanned = (List<EvaluationInformation>)e.Result;
 
             for (int i = 0; i < scanned.Count; i++)
             {
-                AsScanned scan = scanned[i];
+                EvaluationInformation scan = scanned[i];
                 AsListItem asListItem = new AsListItem
                 {
-                    Title = scan.Title,
-                    Image = scan.Image,
+                    Title = scan.Information,
+                    Image = scan.ImagePath,
                     Score = scan.Score
                 };
                 ImageList.Children.Add(asListItem);

@@ -10,7 +10,7 @@ namespace arcoreimg_app
     {
         private string _dirpath;
         private BackgroundWorker _worker;
-        private List<AsScanned> _scans = new List<AsScanned>();
+        private List<EvaluationInformation> _evaluations = new List<EvaluationInformation>();
 
         public AppTask(string dirpath)
         {
@@ -26,10 +26,10 @@ namespace arcoreimg_app
             foreach (string file in Directory.EnumerateFiles(_dirpath, "*.*",
                     SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".png") || s.EndsWith(".jpg")))
             {
-                AsScanned asListItem = AppCore.CheckImage(file);
-                _scans.Add(asListItem);
+                EvaluationInformation asListItem = AppCore.CheckImage(file);
+                _evaluations.Add(asListItem);
             }
-            e.Result = _scans;
+            e.Result = _evaluations;
         }
 
         public event ProgressChangedEventHandler ProgressChanged

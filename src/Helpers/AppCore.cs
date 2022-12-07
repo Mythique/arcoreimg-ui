@@ -41,12 +41,14 @@ namespace arcoreimg_app.Helpers
             return string.Format("{0:0.##} {1}", len, sizes[order]);
         }
 
-        public static AsScanned CheckImage(string imagePath)
+        public static EvaluationInformation CheckImage(string imagePath)
         {
-            AsScanned scan = new AsScanned();
-            scan.Image = imagePath;
+            EvaluationInformation evaluation = new EvaluationInformation
+            {
+                ImagePath = imagePath
+            };
 
-            double filelen = new FileInfo(imagePath).Length;
+            double fileLength = new FileInfo(imagePath).Length;
             Process process = CreateProcess($"eval-img --input_image_path=\"{imagePath}\"");
             process.Start();
 
@@ -54,31 +56,31 @@ namespace arcoreimg_app.Helpers
             string output = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
 
-            scan.Title = $"{Path.GetFileName(imagePath)} ({GetFileSize(filelen)}) | ";
+            evaluation.Information = $"{Path.GetFileName(imagePath)} ({GetFileSize(fileLength)}) | ";
 
             if (!string.IsNullOrEmpty(error))
             {
-                scan.Score = 0;
-                scan.Title += error;
+                evaluation.Score = 0;
+                evaluation.Information += error;
             }
             else if (int.TryParse(output, out int score))
             {
-                scan.Score = score;
+                evaluation.Score = score;
 
                 if (score < 49)
-                    scan.Title += "Poor Quality Image";
+                    evaluation.Information += "Poor Quality Image";
                 else if (score > 90)
-                    scan.Title += "Best Quality Image";
+                    evaluation.Information += "Best Quality Image";
                 else
-                    scan.Title += "Good Quality Image";
+                    evaluation.Information += "Good Quality Image";
             }
             else
             {
-                scan.Score = 0;
-                scan.Title += string.IsNullOrEmpty(output) ? "No result available" : output;
+                evaluation.Score = 0;
+                evaluation.Information += string.IsNullOrEmpty(output) ? "No result available" : output;
             }
 
-            return scan;
+            return evaluation;
         }
     }
 }
