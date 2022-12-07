@@ -27,7 +27,7 @@ namespace arcoreimg_app
         private void DoWork(object sender, DoWorkEventArgs e)
         {
             foreach (string file in Directory.EnumerateFiles(_dirpath, "*.*",
-                    SearchOption.AllDirectories).Where(s => s.EndsWith(".png") || s.EndsWith(".jpg")))
+                    SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".png") || s.EndsWith(".jpg")))
             {
                 AsScanned asListItem = AppCore.CheckImage(file);
                 _scans.Add(asListItem);
