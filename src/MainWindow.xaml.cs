@@ -55,7 +55,7 @@ namespace arcoreimg_app
             CommonOpenFileDialog dlgLst = new CommonOpenFileDialog()
             {
                 Title = "Select an Image Directory",
-                InitialDirectory = Path.Combine(Environment.GetEnvironmentVariable("USERPROFILE"), "Downloads"),
+                RestoreDirectory = true,
                 IsFolderPicker = true
             };
 
