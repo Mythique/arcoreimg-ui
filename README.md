@@ -2,7 +2,7 @@
 
 A desktop app that implements arcoreimg
 
-![arcoreimg Screenshot](https://github.com/JacksiroKe/arcoreimg/raw/master/images/ARCoreImg.png "arcoreimg Screenshot")
+![arcoreimg Screenshot](images/ARCoreImg.png "arcoreimg Screenshot")
 
 [arcoreimg](https://developers.google.com/ar/develop/c/augmented-images/arcoreimg)  is a command line tool that takes a set of reference images and generates an image database file. 
 
