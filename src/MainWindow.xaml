@@ -9,7 +9,7 @@
 
     <Grid>
         <TabControl x:Name="TabMain" SelectedIndex="0">
-            <TabItem Header="CHECK IMAGE QUALITY">
+            <TabItem Header="Check Image Quality">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -22,18 +22,18 @@
 
                     <Grid Grid.Row="1">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Name="TxtFeedback" Text="Select an image to Scan it Or Select a directory with Images" FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" />
+                            <TextBlock Name="TxtFeedback" Text="Select one image or a directory containing images to start the evaluation." FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" />
 
                             <StackPanel Orientation="Horizontal">
-                                <Button Name="BtnImgBrowser" Content="BROWSE AN IMAGE" Click="BtnImgBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="10" />
-                                <Button Name="BtnDirBrowser" Content="BROWSE A DIRECTORY" Click="BtnDirBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="10" />
+                                <Button Name="BtnImgBrowser" Content="Select an image" Click="BtnImgBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="5" Padding="5"/>
+                                <Button Name="BtnDirBrowser" Content="Select a directory" Click="BtnDirBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="5" Padding="5"/>
                             </StackPanel>
                             <ProgressBar Name="ProgressBar" IsIndeterminate="False" Minimum="0" Maximum="100" Foreground="Purple" Height="15" />
                         </StackPanel>
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="CREATE AN IMAGE DATABASE FILE">
+            <TabItem Header="Create a database file (from a directory)">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -54,7 +54,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="CREATE A DATABASE FROM AN IMAGE LIST FILE">
+            <TabItem Header="Create a database file (from an image list)">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
