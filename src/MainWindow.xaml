@@ -4,21 +4,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:arcoreimg_app="clr-namespace:arcoreimg_app.Controls"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" Topmost="False"
         Title="Arcoreimg Tool" Height="500" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen">
 
     <Grid>
-        <TabControl x:Name="TabMain" SelectedIndex="0" Margin="0,0,0,6">
-            <!--<dragablz:TabablzControl.HeaderPrefixContent>
-                <materialDesign:ColorZone Mode="PrimaryMid" Padding="8" VerticalAlignment="Center" Margin="10 0 0 0">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="Resources/arcoreimg.jpg" Height="25" />
-                    </StackPanel>
-                </materialDesign:ColorZone>
-            </dragablz:TabablzControl.HeaderPrefixContent>-->
-
+        <TabControl x:Name="TabMain" SelectedIndex="0">
             <TabItem Header="CHECK IMAGE QUALITY">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -30,20 +20,17 @@
                         <StackPanel Name="ImageList" Orientation="Vertical" />
                     </ScrollViewer>
 
-                    <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="2">
+                    <Grid Grid.Row="1">
                         <StackPanel Orientation="Vertical">
                             <TextBlock Name="TxtFeedback" Text="Select an image to Scan it Or Select a directory with Images" FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" />
 
                             <StackPanel Orientation="Horizontal">
                                 <Button Name="BtnImgBrowser" Content="BROWSE AN IMAGE" Click="BtnImgBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="10" />
-
                                 <Button Name="BtnDirBrowser" Content="BROWSE A DIRECTORY" Click="BtnDirBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="10" />
-
                             </StackPanel>
                             <ProgressBar Name="ProgressBar" IsIndeterminate="False" Minimum="0" Maximum="100" Foreground="Purple" Height="15" />
-
                         </StackPanel>
-                    </Border>
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="CREATE AN IMAGE DATABASE FILE">
@@ -89,11 +76,5 @@
                 </Grid>
             </TabItem>
         </TabControl>
-
-        <Button Style="{DynamicResource MaterialDesignFloatingActionLightButton}"
-                HorizontalAlignment="Right" VerticalAlignment="Top"
-                Margin="0 18 48 32" Visibility="Collapsed">
-            <materialDesign:PackIcon Kind="Refresh" />
-        </Button>
     </Grid>
 </Window>
