@@ -6,7 +6,7 @@
     mc:Ignorable="d" HorizontalAlignment="Stretch"
     x:Name="SingleItem" Background="White" Foreground="Black"
     Height="80">
-    <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1" Cursor="Hand">
+    <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
         <Grid HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80" />
