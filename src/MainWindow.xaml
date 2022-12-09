@@ -4,21 +4,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
         xmlns:arcoreimg_app="clr-namespace:arcoreimg_app.Controls"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" Topmost="False"
         Title="Arcoreimg Tool" Height="500" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen">
 
     <Grid>
-        <dragablz:TabablzControl x:Name="TabMain" SelectedIndex="0" Margin="0,-6,0,6">
-            <dragablz:TabablzControl.HeaderPrefixContent>
+        <TabControl x:Name="TabMain" SelectedIndex="0" Margin="0,0,0,6">
+            <!--<dragablz:TabablzControl.HeaderPrefixContent>
                 <materialDesign:ColorZone Mode="PrimaryMid" Padding="8" VerticalAlignment="Center" Margin="10 0 0 0">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Resources/arcoreimg.jpg" Height="25" />
                     </StackPanel>
                 </materialDesign:ColorZone>
-            </dragablz:TabablzControl.HeaderPrefixContent>
+            </dragablz:TabablzControl.HeaderPrefixContent>-->
 
             <TabItem Header="CHECK IMAGE QUALITY">
                 <Grid>
@@ -88,7 +87,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-        </dragablz:TabablzControl>
+        </TabControl>
 
         <Button Style="{DynamicResource MaterialDesignFloatingActionLightButton}"
                 HorizontalAlignment="Right" VerticalAlignment="Top"
