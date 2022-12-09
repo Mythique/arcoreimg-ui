@@ -54,11 +54,11 @@ This is the last version that was published by JacksiroKe. The changelog here wa
 - Fix a visual problem on the Progress Bar UI.
 - CMD terminal is now hidden from the user.
 
-## [1.0.0] - 2020-04-07
+## [1.0] - 2020-04-07
 
 First version published by JacksiroKe
 
 [Unreleased]: https://github.com/Mythique/arcoreimg/compare/v2.0.0...HEAD
 [2.0.0]: https://github.com/Mythique/arcoreimg/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/Mythique/arcoreimg/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/Mythique/arcoreimg/releases/tag/v1.0.0
+[1.0]: https://github.com/Mythique/arcoreimg/releases/tag/v1.0
