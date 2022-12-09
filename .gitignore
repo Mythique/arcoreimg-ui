@@ -30,6 +30,8 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+[Bb]in/arcoreimg-app.exe
+
 packages/
 *.xml
 *.config
