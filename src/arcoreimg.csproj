@@ -125,8 +125,8 @@
     <Resource Include="Resources\no_image.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Microsoft.WindowsAPICodePack.dll" />
-    <Content Include="Microsoft.WindowsAPICodePack.Shell.dll" />
+    <Content Include="Libs\Microsoft.WindowsAPICodePack.dll" />
+    <Content Include="Libs\Microsoft.WindowsAPICodePack.Shell.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
