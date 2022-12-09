@@ -35,18 +35,15 @@ namespace arcoreimg_app
             {
                 Title = "Select an ImagePath",
                 Filter = "Images |*.jpg; *.png",
-                CheckFileExists = true
+                CheckFileExists = true,
+                Multiselect = true
             };
             if (dlg.ShowDialog() == true)
             {
-                EvaluationInformation scan = AppCore.CheckImage(dlg.FileName);
-                AsListItem asListItem = new AsListItem
-                {
-                    Title = scan.Information,
-                    Image = scan.ImagePath,
-                    Score = scan.Score
-                };
-                ImageList.Children.Add(asListItem);
+                EvaluationTask appTask = new EvaluationTask(dlg.FileNames);
+                appTask.RunWorkerAsync();
+                appTask.ProgressChanged += AppTask_ProgressChanged;
+                appTask.Completed += AppTask_Completed;
             }
         }
 

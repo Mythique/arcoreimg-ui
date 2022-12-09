@@ -22,10 +22,10 @@
 
                     <Grid Grid.Row="1">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Name="TxtFeedback" Text="Select one image or a directory containing images to start the evaluation." FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" />
+                            <TextBlock Name="TxtFeedback" Text="Select image files or a directory containing images to start the evaluation." FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" />
 
                             <StackPanel Orientation="Horizontal">
-                                <Button Name="BtnImgBrowser" Content="Select an image" Click="BtnImgBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="5" Padding="5"/>
+                                <Button Name="BtnImgBrowser" Content="Select one or multiple images" Click="BtnImgBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="5" Padding="5"/>
                                 <Button Name="BtnDirBrowser" Content="Select a directory" Click="BtnDirBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="5" Padding="5"/>
                             </StackPanel>
                             <ProgressBar Name="ProgressBar" IsIndeterminate="False" Minimum="0" Maximum="100" Foreground="Purple" Height="15" />

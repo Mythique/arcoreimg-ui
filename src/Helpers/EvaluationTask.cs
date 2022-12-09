@@ -8,13 +8,25 @@ namespace arcoreimg_app
 {
     public class EvaluationTask
     {
-        private string directoryPath;
+        private string[] files;
         private BackgroundWorker worker;
         private List<EvaluationInformation> evaluations = new List<EvaluationInformation>();
 
         public EvaluationTask(string directoryPath)
         {
-            this.directoryPath = directoryPath;
+            files = Directory.EnumerateFiles(directoryPath, "*.*",
+                    SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".png") || s.EndsWith(".jpg")).ToArray();
+            CreateWorker();
+        }
+
+        public EvaluationTask(string[] filesPath)
+        {
+            files = filesPath;
+            CreateWorker();
+        }
+
+        private void CreateWorker()
+        {
             worker = new BackgroundWorker();
             worker.WorkerSupportsCancellation = false;
             worker.WorkerReportsProgress = true;
@@ -23,10 +35,7 @@ namespace arcoreimg_app
 
         private void DoWork(object sender, DoWorkEventArgs e)
         {
-            IEnumerable<string> files = Directory.EnumerateFiles(directoryPath, "*.*",
-                    SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".png") || s.EndsWith(".jpg"));
-
-            int fileCount = files.Count();
+            int fileCount = files.Length;
             int currentIndex = 0;
 
             foreach (string file in files)
