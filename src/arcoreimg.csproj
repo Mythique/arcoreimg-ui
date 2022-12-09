@@ -124,5 +124,9 @@
     <Resource Include="Resources\arcoreimg.jpg" />
     <Resource Include="Resources\no_image.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Microsoft.WindowsAPICodePack.dll" />
+    <Content Include="Microsoft.WindowsAPICodePack.Shell.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
