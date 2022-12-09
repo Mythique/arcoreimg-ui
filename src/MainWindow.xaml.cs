@@ -122,7 +122,7 @@ namespace arcoreimg_app
                 TxtDirPath2.Text = FileListPath = dlgLst.FileName;
 
                 NewDatabaseName = "myimages_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".imgdb";
-                Process process = AppCore.CreateProcess($"build-db --input_images_directory=\"{FileListPath}\" --output_db_path=\"{Path.Combine(NewDatabaseNamePath, NewDatabaseName)}\"");
+                Process process = AppCore.CreateArCoreImgProcess($"build-db --input_images_directory=\"{FileListPath}\" --output_db_path=\"{Path.Combine(NewDatabaseNamePath, NewDatabaseName)}\"");
                 process.Start();
 
                 try
@@ -153,7 +153,7 @@ namespace arcoreimg_app
 
                 NewDatabaseName = "myimages_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".imgdb";
 
-                Process process = AppCore.CreateProcess($"build-db --input_image_list_path=\"{FileListPath}\" --output_db_path=\"{Path.Combine(NewDatabaseNamePath, NewDatabaseName)}\"");
+                Process process = AppCore.CreateArCoreImgProcess($"build-db --input_image_list_path=\"{FileListPath}\" --output_db_path=\"{Path.Combine(NewDatabaseNamePath, NewDatabaseName)}\"");
                 process.Start();
 
                 try

@@ -5,19 +5,12 @@ namespace arcoreimg_app.Helpers
 {
     public class AppCore
     {
-        /// <summary>
-        /// Create a cmd Process
-        /// </summary>
-        /// <param name="args">args</param>
-        /// <returns></returns>
-
-        public static Process CreateProcess(string args)
+        public static Process CreateArCoreImgProcess(string args)
         {
             ProcessStartInfo procstartInfo = new ProcessStartInfo();
             Process process = new Process();
             procstartInfo.FileName = "./arcoreimg.exe";
             procstartInfo.Arguments = args;
-            // Do not show the black cmd.
             procstartInfo.CreateNoWindow = true;
             process.StartInfo = procstartInfo;
             process.StartInfo.UseShellExecute = false;
@@ -35,7 +28,7 @@ namespace arcoreimg_app.Helpers
             while (len >= 1024 && order < sizes.Length - 1)
             {
                 order++;
-                len = len / 1024;
+                len /= 1024;
             }
 
             return string.Format("{0:0.##} {1}", len, sizes[order]);
@@ -49,7 +42,7 @@ namespace arcoreimg_app.Helpers
             };
 
             double fileLength = new FileInfo(imagePath).Length;
-            Process process = CreateProcess($"eval-img --input_image_path=\"{imagePath}\"");
+            Process process = CreateArCoreImgProcess($"eval-img --input_image_path=\"{imagePath}\"");
             process.Start();
 
             string error = process.StandardError.ReadToEnd();
