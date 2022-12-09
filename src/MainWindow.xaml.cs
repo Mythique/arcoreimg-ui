@@ -61,17 +61,16 @@ namespace arcoreimg_app
 
             if (dlgLst.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                LoadingBar.Visibility = Visibility.Visible;
-                AppTask arcoreimg_appTask = new AppTask(dlgLst.FileName);
-                arcoreimg_appTask.StartAsync();
-                arcoreimg_appTask.ProgressChanged += AppTask_ProgressChanged;
-                arcoreimg_appTask.Completed += AppTask_Completed;
+                EvaluationTask appTask = new EvaluationTask(dlgLst.FileName);
+                appTask.RunWorkerAsync();
+                appTask.ProgressChanged += AppTask_ProgressChanged;
+                appTask.Completed += AppTask_Completed;
             }
         }
 
         private void AppTask_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            LoadingBar.Visibility = Visibility.Visible;
+            ProgressBar.Value = e.ProgressPercentage;
         }
 
         private void AppTask_Completed(object sender, RunWorkerCompletedEventArgs e)
@@ -91,7 +90,8 @@ namespace arcoreimg_app
                 };
                 ImageList.Children.Add(asListItem);
             }
-            LoadingBar.Visibility = Visibility.Collapsed;
+
+            ProgressBar.Value = 100;
         }
 
         private void BtnDbDirBrowser_Click(object sender, RoutedEventArgs e)

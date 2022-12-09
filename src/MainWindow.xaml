@@ -30,8 +30,6 @@
                         <StackPanel Name="ImageList" Orientation="Vertical" />
                     </ScrollViewer>
 
-                    <arcoreimg_app:AsProgress Grid.Row="0" x:Name="LoadingBar" Foreground="Green" Width="200" Height="200" Margin="50" VerticalAlignment="Top" HorizontalAlignment="Center" Value="0" Visibility="Collapsed" />
-
                     <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="2">
                         <StackPanel Orientation="Vertical">
                             <TextBlock Name="TxtFeedback" Text="Select an image to Scan it Or Select a directory with Images" FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" />
@@ -40,7 +38,10 @@
                                 <Button Name="BtnImgBrowser" Content="BROWSE AN IMAGE" Click="BtnImgBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="10" />
 
                                 <Button Name="BtnDirBrowser" Content="BROWSE A DIRECTORY" Click="BtnDirBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="10" />
+
                             </StackPanel>
+                            <ProgressBar Name="ProgressBar" IsIndeterminate="False" Minimum="0" Maximum="100" Foreground="Purple" Height="15" />
+
                         </StackPanel>
                     </Border>
                 </Grid>
