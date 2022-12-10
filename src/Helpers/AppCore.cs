@@ -54,6 +54,9 @@ namespace arcoreimg_app.Helpers
             if (!string.IsNullOrEmpty(error))
             {
                 evaluation.Score = 0;
+
+                error = error.Replace("\r\n", " ");
+
                 evaluation.Information += error;
             }
             else if (int.TryParse(output, out int score))

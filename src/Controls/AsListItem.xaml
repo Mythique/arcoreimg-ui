@@ -19,13 +19,13 @@
             <Grid Grid.Column="1" Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="25" />
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Name="ImgTitle" Text="Item Title Here" HorizontalAlignment="Stretch" FontSize="15" TextWrapping="WrapWithOverflow" VerticalAlignment="Center" />
 
                 <ProgressBar Grid.Row="1" Name="LoadingBar" Margin="0, 0" BorderBrush="Black" Foreground="Black" Background="Gray" />
 
-                <TextBlock Grid.Row="1" Name="ImgScore" Text="0%" FontSize="20" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Name="ImgScore" Text="0%" FontSize="18" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" VerticalAlignment="Center"/>
             </Grid>
         </Grid>
     </Border>
