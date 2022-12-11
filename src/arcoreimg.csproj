@@ -75,7 +75,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Controls\AsListItem.xaml">
+    <Page Include="Controls\EvaluationItemUI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -88,8 +88,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\AppCore.cs" />
-    <Compile Include="Controls\AsListItem.xaml.cs">
-      <DependentUpon>AsListItem.xaml</DependentUpon>
+    <Compile Include="Controls\EvaluationItemUI.xaml.cs">
+      <DependentUpon>EvaluationItemUI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EvaluationTask.cs" />
     <Compile Include="Helpers\EvaluationInformation.cs" />

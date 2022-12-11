@@ -79,7 +79,7 @@ namespace arcoreimg_app
             for (int i = 0; i < scanned.Count; i++)
             {
                 EvaluationInformation scan = scanned[i];
-                AsListItem asListItem = new AsListItem
+                EvaluationItemUI asListItem = new EvaluationItemUI
                 {
                     Title = scan.Information,
                     Image = scan.ImagePath,
