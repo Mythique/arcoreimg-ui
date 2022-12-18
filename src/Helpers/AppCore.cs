@@ -62,13 +62,6 @@ namespace arcoreimg_app.Helpers
             else if (int.TryParse(output, out int score))
             {
                 evaluation.Score = score;
-
-                if (score < 49)
-                    evaluation.Information += "Poor Quality Image";
-                else if (score > 90)
-                    evaluation.Information += "Best Quality Image";
-                else
-                    evaluation.Information += "Good Quality Image";
             }
             else
             {

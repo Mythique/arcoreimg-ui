@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace arcoreimg_app.Controls
 {
@@ -33,6 +34,9 @@ namespace arcoreimg_app.Controls
             {
                 ImgScore.Text = value + " %";
                 LoadingBar.Value = value;
+                
+                Color foregroundColor = value > 75 ? Color.FromRgb(0, 122, 0) : Color.FromRgb(122, 0, 0);
+                LoadingBar.Foreground = new SolidColorBrush(foregroundColor);
             }
         }
     }
