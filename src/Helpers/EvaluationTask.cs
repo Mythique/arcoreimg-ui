@@ -16,7 +16,7 @@ namespace arcoreimg_app
         public EvaluationTask(string directoryPath)
         {
             files = Directory.EnumerateFiles(directoryPath, "*.*",
-                    SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".png") || s.EndsWith(".jpg")).ToArray();
+                    SearchOption.TopDirectoryOnly).Where(s => AppCore.IsFileExtensionAccepted(s)).ToArray();
             CreateWorker();
         }
 

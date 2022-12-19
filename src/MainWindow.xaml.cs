@@ -29,21 +29,39 @@ namespace arcoreimg_app
             TxtDirPath2.Text = TxtDirPath4.Text = Path.Combine(Environment.GetEnvironmentVariable("USERPROFILE"), "Downloads");
         }
 
+        private void ImagePanel_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] tempFiles = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                List<string> files = new List<string>();
+                // Exclude files that are not an image
+                // It feels like a hack, is their a cleaner way to do this?
+                foreach (var item in tempFiles)
+                {
+                    if (AppCore.IsFileExtensionAccepted(item))
+                    {
+                        files.Add(item);
+                    }
+                }
+                
+                CreateAndStartEvaluationTask(files.ToArray()); 
+            }
+        }
+
         private void BtnImgBrowser_Click(object sender, RoutedEventArgs e)
         {
             var dlg = new Microsoft.Win32.OpenFileDialog
             {
                 Title = "Select an ImagePath",
-                Filter = "Images |*.jpg; *.png",
+                Filter = "Images |*.jpg; *jpeg; *.png",
                 CheckFileExists = true,
                 Multiselect = true
             };
             if (dlg.ShowDialog() == true)
             {
-                EvaluationTask appTask = new EvaluationTask(dlg.FileNames);
-                appTask.RunWorkerAsync();
-                appTask.ProgressChanged += AppTask_ProgressChanged;
-                appTask.Completed += AppTask_Completed;
+                CreateAndStartEvaluationTask(dlg.FileNames);
             }
         }
 
@@ -63,6 +81,14 @@ namespace arcoreimg_app
                 appTask.ProgressChanged += AppTask_ProgressChanged;
                 appTask.Completed += AppTask_Completed;
             }
+        }
+
+        private void CreateAndStartEvaluationTask(string[] files)
+        {
+            EvaluationTask appTask = new EvaluationTask(files);
+            appTask.RunWorkerAsync();
+            appTask.ProgressChanged += AppTask_ProgressChanged;
+            appTask.Completed += AppTask_Completed;
         }
 
         private void AppTask_ProgressChanged(object sender, ProgressChangedEventArgs e)

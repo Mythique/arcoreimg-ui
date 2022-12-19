@@ -17,7 +17,7 @@
                     </Grid.RowDefinitions>
 
                     <ScrollViewer Grid.Row="0" PanningMode="Both" Grid.ColumnSpan="2" Background="#EEEEEE">
-                        <StackPanel Name="ImageList" Orientation="Vertical" />
+                        <StackPanel Name="ImageList" Orientation="Vertical" AllowDrop="true" Drop="ImagePanel_Drop" Background="Transparent" Height="Auto"/>
                     </ScrollViewer>
 
                     <Grid Grid.Row="1">

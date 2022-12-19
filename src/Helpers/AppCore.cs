@@ -71,5 +71,11 @@ namespace arcoreimg_app.Helpers
 
             return evaluation;
         }
+
+        public static bool IsFileExtensionAccepted(string path)
+        {
+            string extension = Path.GetExtension(path);
+            return (extension == ".png" || extension == ".jpg" || extension == ".jpeg");
+        }
     }
 }
