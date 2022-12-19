@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace arcoreimg_app
 {
@@ -38,13 +39,13 @@ namespace arcoreimg_app
             int fileCount = files.Length;
             int currentIndex = 0;
 
-            foreach (string file in files)
+            Parallel.ForEach(files, file =>
             {
                 EvaluationInformation asListItem = AppCore.CheckImage(file);
                 evaluations.Add(asListItem);
                 worker.ReportProgress((int)((float)currentIndex / (float)fileCount * 100));
                 currentIndex++;
-            }
+            });
             e.Result = evaluations;
         }
 
