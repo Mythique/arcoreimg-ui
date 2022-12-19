@@ -46,7 +46,8 @@ namespace arcoreimg_app
                     }
                 }
                 
-                CreateAndStartEvaluationTask(files.ToArray()); 
+                if (files.Count > 0)
+                    CreateAndStartEvaluationTask(files.ToArray()); 
             }
         }
 
