@@ -15,14 +15,18 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-
-                    <ScrollViewer Grid.Row="0" PanningMode="Both" Grid.ColumnSpan="2" Background="#EEEEEE">
+                    <Grid Background="#EEEEEE">
+                        <TextBlock Foreground="Gray" FontSize="20" Text="Drop files here" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    </Grid>
+                    <ScrollViewer Grid.Row="0" PanningMode="Both" Grid.ColumnSpan="2" >
                         <StackPanel Name="ImageList" Orientation="Vertical" AllowDrop="true" Drop="ImagePanel_Drop" Background="Transparent" Height="Auto"/>
                     </ScrollViewer>
 
                     <Grid Grid.Row="1">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Name="TxtFeedback" Text="Select image files or a directory containing images to start the evaluation." FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" />
+                            <TextBlock x:Name="TxtFeedback" FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" >
+                                <Run Text="Start an evaluation by selecting the following two options or by dropping files in the area above"/>
+                            </TextBlock>
 
                             <StackPanel Orientation="Horizontal">
                                 <Button Name="BtnImgBrowser" Content="Select one or multiple images" Click="BtnImgBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="5" Padding="5"/>
