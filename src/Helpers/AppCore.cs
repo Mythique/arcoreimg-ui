@@ -49,7 +49,7 @@ namespace arcoreimg_app.Helpers
             string output = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
 
-            evaluation.Information = $"{Path.GetFileName(imagePath)} ({GetFileSize(fileLength)}) | ";
+            evaluation.Information = $"{Path.GetFileName(imagePath)} ({GetFileSize(fileLength)})";
 
             if (!string.IsNullOrEmpty(error))
             {
@@ -57,7 +57,7 @@ namespace arcoreimg_app.Helpers
 
                 error = error.Replace("\r\n", " ");
 
-                evaluation.Information += error;
+                evaluation.Information += " | " + error;
             }
             else if (int.TryParse(output, out int score))
             {
@@ -66,7 +66,7 @@ namespace arcoreimg_app.Helpers
             else
             {
                 evaluation.Score = 0;
-                evaluation.Information += string.IsNullOrEmpty(output) ? "No result available" : output;
+                evaluation.Information += string.IsNullOrEmpty(output) ? " | No result available" : output;
             }
 
             return evaluation;
