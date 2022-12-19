@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Can now drop files to evaluate them.
+- Image evaluation is now parallelized.
+- DPI scaling support.
+
+### Changed
+
+- Replaced the "Poor/Best/Good Quality Image" message with a more accurate color indicator : green if score > 75, red otherwise. [Google recommends using images with a score of at least 75](https://developers.google.com/ar/develop/augmented-images/arcoreimg).
+- Error messages on evaluation should be easier to read. Hovering the message will display a tooltip with the complete error.
+
+### Fixed
+
+- ".jpeg" extension is now accepted.
+
 ## [2.0.0] - 2022-12-08
 
 ### Added
