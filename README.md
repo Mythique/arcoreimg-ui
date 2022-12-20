@@ -17,7 +17,7 @@ Arcoreimg GUI is built upon this tool and is a nice alternative if you don't wan
 
 [The original version of this application was made by JacksiroKe](https://github.com/JacksiroKe/arcoreimg). It is not maintained anymore and had some issues.
 
-This version has a few fixes, some improvement and less dependencies.
+This version has a few fixes, some improvement and fewer dependencies.
 
 A brief and incomplete summary of the differences :
 - Fixed an issue that would prevent evaluating images that have spaces in their path. 
