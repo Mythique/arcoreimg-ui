@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2022-12-19
+
 ### Added
 
 - Can now drop files to evaluate them.
@@ -73,7 +75,8 @@ This is the last version that was published by JacksiroKe. The changelog here wa
 
 First version published by JacksiroKe
 
-[Unreleased]: https://github.com/Mythique/arcoreimg/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/Mythique/arcoreimg/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/Mythique/arcoreimg/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/Mythique/arcoreimg/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/Mythique/arcoreimg/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Mythique/arcoreimg/releases/tag/v1.0.0
