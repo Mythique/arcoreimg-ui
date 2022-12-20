@@ -9,8 +9,9 @@ Arcoreimg GUI is built upon this tool and is a nice alternative if you don't wan
 ## Features
 
 1. Check image quality
-2. Create image database from a directory of images
-3. Create a image database from an image list file
+2. Create an image database file from a directory of images
+3. Create an image database file from an image list file
+
 
 ## Differences with JacksiroKe's version
 
