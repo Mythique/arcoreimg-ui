@@ -24,9 +24,7 @@
 
                     <Grid Grid.Row="1">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock x:Name="TxtFeedback" FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" >
-                                <Run Text="Start an evaluation by selecting the following two options or by dropping files in the area above"/>
-                            </TextBlock>
+                            <TextBlock x:Name="TxtFeedback" FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" ><Run Text="Start an evaluation by selecting the following two options or by dropping files in the area above"/><Run Text="."/><LineBreak/><Run Text="We recommend using images with a score of at least 75."/></TextBlock>
 
                             <StackPanel Orientation="Horizontal">
                                 <Button Name="BtnImgBrowser" Content="Select one or multiple images" Click="BtnImgBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="5" Padding="5"/>
