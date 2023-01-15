@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" Topmost="False"
-        Title="Arcoreimg Tool" Height="500" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        Title="Arcoreimg Tool (2.1.1-pre)" Height="500" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <TabControl x:Name="TabMain" SelectedIndex="0">
