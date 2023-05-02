@@ -1,0 +1,22 @@
+This is some of the things I had in mind to improve this app. I currently don't plan to work on this soon, but we never know.
+
+- Reduce memory footprint (convert images to a smaller one ? what is the cost of downsampling?).
+- Add evaluation items one at a time? Instead of all of them at the end.
+
+- Add the time an image was evaluated, could be useful to make a comparison with a newer version of the same image?
+
+- Do we really need to display the size of an image? use case?
+
+- Add a "remove from list" button :
+	- Individual button for an image.
+	- "clear all" button.
+
+- Add an option to override an existing image (preventing duplicates).
+	- This option could also compare the new score to the previous score.
+
+- Add sort option ?
+	- time
+	- score
+	- name
+
+- Multiplatform with .NET Core and Avalon? => Might be too complicated and add too much dependencies...
