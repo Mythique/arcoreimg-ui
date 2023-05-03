@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" Topmost="False"
-        Title="Arcoreimg Tool (2.1.1-pre)" Height="500" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        Title="Arcoreimg Tool (2.1.1)" Height="500" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <TabControl x:Name="TabMain" SelectedIndex="0">
@@ -24,7 +24,7 @@
 
                     <Grid Grid.Row="1">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock x:Name="TxtFeedback" FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" ><Run Text="Start an evaluation by selecting the following two options or by dropping files in the area above"/><Run Text="."/><LineBreak/><Run Language="fr-fr" Text="Google"/><Run Text=" recommend"/><Run Language="fr-fr" Text="s"/><Run Text=" using images with a score of at least 75."/></TextBlock>
+                            <TextBlock x:Name="TxtFeedback" FontSize="15" Margin="5" TextWrapping="WrapWithOverflow" ><Run Text="Start an evaluation by selecting the following two options or by dropping files in the area above."/><LineBreak/><Run Text="Google recommends using images with a score of at least 75."/></TextBlock>
 
                             <StackPanel Orientation="Horizontal">
                                 <Button Name="BtnImgBrowser" Content="Select one or multiple images" Click="BtnImgBrowser_Click" FontSize="15" HorizontalAlignment="Center" Margin="5" Padding="5"/>

@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.1] - 2023-05-02
+
+### Added
+
+- Version in titlebar
+- Comment about image quality in UI.
+
+### Fixed
+
+- Evaluation score is now green if superior or equal to 75.
+
 ## [2.1.0] - 2022-12-19
 
 ### Added
@@ -75,7 +86,8 @@ This is the last version that was published by JacksiroKe. The changelog here wa
 
 First version published by JacksiroKe
 
-[Unreleased]: https://github.com/Mythique/arcoreimg/compare/v2.1.0...HEAD
+[Unreleased]: https://github.com/Mythique/arcoreimg/compare/v2.1.1...HEAD
+[2.1.1]: https://github.com/Mythique/arcoreimg/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/Mythique/arcoreimg/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/Mythique/arcoreimg/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/Mythique/arcoreimg/compare/v1.0.0...v1.1.0
